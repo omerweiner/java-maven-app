@@ -15,7 +15,10 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        mvn clean && mvn test && mvn compile && mvn package
+        mvn clean
+        mvn test
+        mvn compile
+        mvn package
 
   - task: ArchiveFiles@2
     inputs:
