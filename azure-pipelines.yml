@@ -35,6 +35,6 @@ steps:
       rootFolderOrFile: '$(Build.BinariesDirectory)'
       includeRootFolder: true
       archiveType: 'zip'
-      archiveFile: '/home/omer/myagent/archives/$(Build.BuildId).zip'
+      archiveFile: '/home/omer/myagent/IT/$(Build.BuildId).zip'
       replaceExistingArchive: true
 
