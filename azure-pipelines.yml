@@ -31,15 +31,14 @@ steps:
         mvn compile
         mvn package
 
-
-
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(Build.BinariesDirectory)'
-      includeRootFolder: true
-      archiveType: 'zip'
+      includeRootFolder: false
+      archiveType: 'tar'
       archiveFile: 'C:\IT/$(Build.BuildId).zip'
       replaceExistingArchive: true
+
 
   # - task: GenerateVersionStamp@2
   #   inputs:
