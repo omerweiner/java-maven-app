@@ -18,10 +18,18 @@ steps:
 
   - script: |
       echo Add other tasks to build, test, and deploy your project.
+  # - task: PowerShell@2
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: 'mvn clean'
   - task: PowerShell@2
     inputs:
       targetType: 'inline'
-      script: 'mvn build'
+      script: |
+        mvn clean
+        mvn test
+        mvn compile
+        mvn package
   # - task: Maven@4
   #   inputs:
   #     mavenPomFile: 'pom.xml'
