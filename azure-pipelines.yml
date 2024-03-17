@@ -18,11 +18,10 @@ steps:
 
   - script: |
       echo Add other tasks to build, test, and deploy your project.
-
-  # - task: PowerShell@2
-  #   inputs:
-  #     filePath: 'C:\java-maven-app'
-  #     arguments: 'mvn clean'
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: 'mvn clean'
   # - task: Maven@4
   #   inputs:
   #     mavenPomFile: 'pom.xml'
@@ -32,17 +31,7 @@ steps:
   #     mavenAuthenticateFeed: false
   #     effectivePomSkip: false
   #     sonarQubeRunAnalysis: false
-  - task: Maven@4
-    inputs:
-      mavenPomFile: 'pom.xml'
-      publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      testRunTitle: 'run-1'
-      javaHomeOption: 'JDKVersion'
-      mavenVersionOption: 'Default'
-      mavenAuthenticateFeed: false
-      effectivePomSkip: false
-      sonarQubeRunAnalysis: false
+ 
 
 
   # - task: ArchiveFiles@2
