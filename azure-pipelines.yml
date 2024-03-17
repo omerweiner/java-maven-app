@@ -22,14 +22,14 @@ steps:
   #   inputs:
   #     targetType: 'inline'
   #     script: 'mvn clean'
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
-        mvn clean
-        mvn test
-        mvn compile
-        mvn package
+  # - task: PowerShell@2
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: |
+  #       mvn clean
+  #       mvn test
+  #       mvn compile
+  #       mvn package
 
   - task: ArchiveFiles@2
     inputs:
