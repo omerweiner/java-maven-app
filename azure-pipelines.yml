@@ -8,7 +8,7 @@ trigger:
 - develop
 
 pool:
-  name: Default  # Replace with the actual name of your agent pool if different
+  name: Default  
 
 steps:
   - task: PowerShell@2
@@ -35,8 +35,3 @@ steps:
         $buildId = "$(Build.BuildId)"
         $filePath = "C:\IT\Versions\VersionStemp.txt"
         Add-Content -Path $filePath -Value "$buildId`n"
-
-#  - task: GenerateVersionStamp@2  # Uncomment if needed
-#    inputs:
-#      targetPath: '/home/omer/myagent/Versions/VersionStamp.txt'
-#      format: '$(MajorVersion).$(MinorVersion).$(BuildNumber)'
