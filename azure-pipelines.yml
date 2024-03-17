@@ -16,17 +16,30 @@ steps:
   - script: |
       echo Add other tasks to build, test, and deploy your project.
 
+  # - task: Maven@4
+  #   inputs:
+  #     mavenPomFile: 'pom.xml'
+  #     publishJUnitResults: true
+  #     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+  #     testRunTitle: 'test1'
+  #     javaHomeOption: 'JDKVersion'
+  #     mavenVersionOption: 'Default'
+  #     mavenAuthenticateFeed: false
+  #     effectivePomSkip: false
+  #     sonarQubeRunAnalysis: false
+
   - task: Maven@4
     inputs:
       mavenPomFile: 'pom.xml'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      testRunTitle: 'test1'
+      testRunTitle: 'run-1'
       javaHomeOption: 'JDKVersion'
       mavenVersionOption: 'Default'
       mavenAuthenticateFeed: false
       effectivePomSkip: false
-      sonarQubeRunAnalysis: false
+      sonarQubeRunAnalysis: true
+      sqMavenPluginVersionChoice: 'latest'
 
   - task: ArchiveFiles@2
     inputs:
