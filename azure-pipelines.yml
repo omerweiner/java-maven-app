@@ -38,3 +38,13 @@ steps:
       archiveFile: '/home/omer/myagent/IT/$(Build.BuildId).zip'
       replaceExistingArchive: true
 
+  - task: SendEmail@1
+    inputs:
+      To: 'omerweiner5800@gmail.com'
+      From: 'omerweiner5800@gmail.com'
+      Subject: 'Pipeline Run Status'
+      Body: |
+        Hello there , 
+        adding the past pipeline run test status
+      BodyAsHtml: false
+      AddAttachment: false
