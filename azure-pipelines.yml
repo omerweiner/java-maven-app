@@ -30,25 +30,16 @@ steps:
         mvn test
         mvn compile
         mvn package
-  # - task: Maven@4
-  #   inputs:
-  #     mavenPomFile: 'pom.xml'
-  #     publishJUnitResults: false
-  #     javaHomeOption: 'JDKVersion'
-  #     mavenVersionOption: 'Default'
-  #     mavenAuthenticateFeed: false
-  #     effectivePomSkip: false
-  #     sonarQubeRunAnalysis: false
- 
 
 
-  # - task: ArchiveFiles@2
-  #   inputs:
-  #     rootFolderOrFile: '$(Build.BinariesDirectory)'
-  #     includeRootFolder: true
-  #     archiveType: 'zip'
-  #     archiveFile: '/home/omer/myagent/IT/$(Build.BuildId).zip'
-  #     replaceExistingArchive: true
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(Build.BinariesDirectory)'
+      includeRootFolder: true
+      archiveType: 'zip'
+      archiveFile: 'C:\IT/$(Build.BuildId).zip'
+      replaceExistingArchive: true
 
   # - task: GenerateVersionStamp@2
   #   inputs:
