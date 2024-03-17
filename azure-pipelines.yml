@@ -1,5 +1,6 @@
 # Starter pipeline
 
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, and more:
 # https://aka.ms/yaml
@@ -17,15 +18,18 @@ steps:
   - script: |
       echo Add other tasks to build, test, and deploy your project.
 
-  - task: Maven@4
+  - task: PowerShell@2
     inputs:
-      mavenPomFile: 'pom.xml'
-      publishJUnitResults: false
-      javaHomeOption: 'JDKVersion'
-      mavenVersionOption: 'Default'
-      mavenAuthenticateFeed: false
-      effectivePomSkip: false
-      sonarQubeRunAnalysis: false
+      arguments: 'mvn package'
+  # - task: Maven@4
+  #   inputs:
+  #     mavenPomFile: 'pom.xml'
+  #     publishJUnitResults: false
+  #     javaHomeOption: 'JDKVersion'
+  #     mavenVersionOption: 'Default'
+  #     mavenAuthenticateFeed: false
+  #     effectivePomSkip: false
+  #     sonarQubeRunAnalysis: false
   # - task: Maven@4
   #   inputs:
   #     mavenPomFile: 'pom.xml'
