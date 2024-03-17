@@ -30,18 +30,11 @@ steps:
       sonarQubeRunAnalysis: false
 
 
-  # - task: ArchiveFiles@2
-  #   inputs:
-  #     rootFolderOrFile: '$(Build.BinariesDirectory)'
-  #     includeRootFolder: true
-  #     archiveType: 'zip'
-  #     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-  #     replaceExistingArchive: true
-
   - task: ArchiveFiles@2
     inputs:
-      rootFolderOrFile: '/home/omer/myagent/archives'
+      rootFolderOrFile: '$(Build.BinariesDirectory)'
       includeRootFolder: true
-      archiveType: 'tar'
-      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      archiveType: 'zip'
+      archiveFile: 'home/omer/myagent/archives/$(Build.BuildId).zip'
       replaceExistingArchive: true
+
