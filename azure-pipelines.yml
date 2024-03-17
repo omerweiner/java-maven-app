@@ -38,7 +38,17 @@ steps:
       archiveType: 'tar'
       archiveFile: 'C:\IT/$(Build.BuildId).zip'
       replaceExistingArchive: true
-
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: |
+              $buildId = "$(Build.BuildId)"
+              $filePath = "C:\IT\Versions\VersionStemp.txt"
+              Add-Content -Path $filePath -Value "$buildId`n"
 
   # - task: GenerateVersionStamp@2
   #   inputs:
