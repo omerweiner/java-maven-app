@@ -30,21 +30,15 @@ steps:
       sonarQubeRunAnalysis: false
 
 
-  - task: ArchiveFiles@2
-    inputs:
-      rootFolderOrFile: '$(Build.BinariesDirectory)'
-      includeRootFolder: true
-      archiveType: 'zip'
-      archiveFile: '/home/omer/myagent/IT/$(Build.BuildId).zip'
-      replaceExistingArchive: true
+  # - task: ArchiveFiles@2
+  #   inputs:
+  #     rootFolderOrFile: '$(Build.BinariesDirectory)'
+  #     includeRootFolder: true
+  #     archiveType: 'zip'
+  #     archiveFile: '/home/omer/myagent/IT/$(Build.BuildId).zip'
+  #     replaceExistingArchive: true
 
-  - task: SendEmail@1
-    inputs:
-      To: 'omerweiner5800@gmail.com'
-      From: 'omerweiner5800@gmail.com'
-      Subject: 'Pipeline Run Status'
-      Body: |
-        Hello there , 
-        adding the past pipeline run test status
-      BodyAsHtml: false
-      AddAttachment: false
+  # - task: GenerateVersionStamp@2
+  #   inputs:
+  #     targetPath: '/home/omer/myagent/Versions/VersionStamp.txt'
+  #     format: '$(MajorVersion).$(MinorVersion).$(BuildNumber)
